@@ -9,23 +9,25 @@ def initialize_page():
     pass
 
 
-def n_edges_limit(n_nodes):
+def max_edges(n_nodes):
     return n_nodes * (n_nodes - 1) / 2
 
 
 def initialize_params():
 
+    sb = st.sidebar()
+
     global graph_type
     options = ['Predefined Graph', 'Random Graph', 'Customized Graph']
-    graph_type = st.radio(label='Choose Graph Type', options=options)
+    graph_type = sb.radio(label='Choose Graph Type', options=options)
 
-    n_nodes = st.slider(
+    n_nodes = sb.slider(
         label='Choose Number of Nodes:',
         min_value=5, max_value=100, value=10, step=5
     )
-    n_edges = st.slider(
+    n_edges = sb.slider(
         label='Choose Number of Edges:',
-        min_value=0, max_value=n_edges_limit, value=n_nodes - 1, step=1
+        min_value=0, max_value=max_edges(n_nodes), value=n_nodes-1, step=1
     )
     pass
 
