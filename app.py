@@ -10,7 +10,7 @@ def initialize_page():
 
 
 def max_edges(n_nodes):
-    return n_nodes * (n_nodes - 1) / 2
+    return int(n_nodes * (n_nodes - 1) / 2)
 
 
 def initialize_params():
