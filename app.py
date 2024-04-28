@@ -1,7 +1,7 @@
 import streamlit as st
-from graph import Graph
-from graph import RandomGraph
-from graph import CustomizedGrpah
+# from graph import Graph
+# from graph import RandomGraph
+# from graph import CustomizedGrpah
 from plot import plot_graph
 import networkx as nx
 
