@@ -2,6 +2,7 @@ import streamlit as st
 from graph import Graph
 from graph import RandomGraph
 from graph import CustomizedGrpah
+from plot import plot_graph
 
 
 def initialize_page():
@@ -15,11 +16,12 @@ def max_edges(n_nodes):
 
 def initialize_params():
 
+    global sb
     sb = st.sidebar
 
     global graph_type
     options = ['Predefined Graph', 'Random Graph', 'Customized Graph']
-    graph_type = sb.radio(label='Choose Graph Type', options=options)
+    graph_type = sb.radio(label='Choose Graph Type:', options=options)
 
     n_nodes = sb.slider(
         label='Choose Number of Nodes:',
@@ -37,6 +39,10 @@ if __name__ == '__main__':
     initialize_page()
     initialize_params()
 
-    if st.button('Generate Graph'):
+    if sb.button('Generate Graph'):
 
-        st.write('ok!')
+        sb.write('pass!')
+        if graph_type == 'Random Graph':
+            G = RandomGraph()
+        fig = plot_graph()
+        st.pyplot(fig=fig, use_containter_width=True)
