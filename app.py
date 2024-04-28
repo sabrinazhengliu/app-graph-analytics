@@ -14,9 +14,11 @@ def n_edges_limit(n_nodes):
 
 
 def initialize_params():
+
     global graph_type
-    options = ['Predefined Graph', 'Random Graph' 'Customized Graph']
+    options = ['Predefined Graph', 'Random Graph', 'Customized Graph']
     graph_type = st.radio(options)
+
     n_nodes = st.slider(
         label='Choose Number of Nodes:',
         min_value=5, max_value=100, value=10, step=5
