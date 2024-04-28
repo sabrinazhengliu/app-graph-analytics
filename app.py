@@ -41,7 +41,7 @@ if __name__ == '__main__':
     initialize_params()
 
     if sb.button('Generate Graph'):
-        G = nx.random_clustered_graph()
+        G = nx.random_graph(100, 0.2)
 
         fig = plot_graph(G)
         st.pyplot(fig=fig, use_containter_width=True)
