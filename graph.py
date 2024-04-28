@@ -3,7 +3,7 @@ import itertools
 import random
 
 
-class Graph:
+class MyGraph:
 
     def __init__(self, list_nodes=[], list_edges=[]) -> None:
         self.graph = nx.Graph()
@@ -18,7 +18,7 @@ class Graph:
         return info
 
 
-class RandomGraph(Graph):
+class RandomGraph(MyGraph):
 
     def __init__(self) -> None:
         super().__init__()
@@ -49,14 +49,14 @@ class RandomGraph(Graph):
         return list_edges
 
 
-class CustomizedGrpah(Graph):
+class CustomizedGrpah(MyGraph):
     def __init__(self) -> None:
         pass
 
 
 if __name__ == '__main__':
 
-    g = Graph()
+    g = MyGraph()
 
     n_nodes = 10
     n_edges = n_nodes - 1
@@ -66,5 +66,5 @@ if __name__ == '__main__':
     list_edges = [p for p in list_pairs if list_pairs.index(p) in rand_index]
 
     print(list_edges)
-    g = Graph(list_nodes, list_edges)
+    g = MyGraph(list_nodes, list_edges)
     print(g)
