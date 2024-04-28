@@ -17,7 +17,7 @@ def initialize_params():
 
     global graph_type
     options = ['Predefined Graph', 'Random Graph', 'Customized Graph']
-    graph_type = st.radio(options)
+    graph_type = st.radio(label='Choose Graph Type', options=options)
 
     n_nodes = st.slider(
         label='Choose Number of Nodes:',
@@ -33,7 +33,7 @@ def initialize_params():
 if __name__ == '__main__':
 
     initialize_page()
-    # initialize_params()
+    initialize_params()
 
     if st.button('Generate Graph'):
 
