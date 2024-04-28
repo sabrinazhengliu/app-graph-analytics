@@ -19,7 +19,7 @@ class Graph:
 class RandomGraph:
 
     def __init__(self) -> None:
-        super.init()
+        super().__init__()
         list_nodes = self.generate_random_nodes()
         list_edges = self.generate_random_edges(list_nodes)
         self.graph.add_nodes_from(list_nodes)
