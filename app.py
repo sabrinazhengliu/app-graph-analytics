@@ -3,6 +3,7 @@ from graph import Graph
 from graph import RandomGraph
 from graph import CustomizedGrpah
 from plot import plot_graph
+import networkx as nx
 
 
 def initialize_page():
@@ -40,11 +41,7 @@ if __name__ == '__main__':
     initialize_params()
 
     if sb.button('Generate Graph'):
-
-        if graph_type == 'Random Graph':
-            G = RandomGraph()
-            st.write(G)
-
+        G = nx.random_clustered_graph()
 
         fig = plot_graph(G)
         st.pyplot(fig=fig, use_containter_width=True)

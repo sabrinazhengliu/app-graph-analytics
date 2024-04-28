@@ -78,7 +78,13 @@ def plot_graph(G):
                 yref="paper",
                 x=0.005,
                 y=-0.002,
-            )]
+            )],
+            xaxis=dict(
+                showgrid=False, zeroline=False, showticklabels=False
+            ),
+            yaxis=dict(
+                showgrid=False, zeroline=False, showticklabels=False
+            )
         )
     )
     return fig
