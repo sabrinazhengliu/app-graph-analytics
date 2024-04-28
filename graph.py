@@ -16,7 +16,7 @@ class Graph:
         return info
 
 
-class RandomGraph:
+class RandomGraph(Graph):
 
     def __init__(self) -> None:
         super().__init__()
@@ -45,7 +45,7 @@ class RandomGraph:
         return list_edges
 
 
-class CustomizedGrpah:
+class CustomizedGrpah(Graph):
     def __init__(self) -> None:
         pass
 
