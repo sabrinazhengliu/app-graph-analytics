@@ -9,6 +9,8 @@ class Graph:
         self.graph = nx.Graph()
         self.graph.add_nodes_from(list_nodes)
         self.graph.add_edges_from(list_edges)
+        self.n_nodes = len(list_nodes)
+        self.n_edges = len(list_edges)
         pass
 
     def __repr__(self) -> str:
@@ -24,6 +26,8 @@ class RandomGraph(Graph):
         list_edges = self.generate_random_edges(list_nodes)
         self.graph.add_nodes_from(list_nodes)
         self.graph.add_edges_from(list_edges)
+        self.n_nodes = len(list_nodes)
+        self.n_edges = len(list_edges)
         pass
 
     @staticmethod
