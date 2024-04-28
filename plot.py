@@ -30,6 +30,15 @@ def generate_node_trace(G):
         )
     )
 
+    node_adjacencies = []
+    node_text = []
+    for node, adjacencies in enumerate(G.adjacency()):
+        node_adjacencies.append(len(adjacencies[1]))
+        node_text.append('# of connections: '+str(len(adjacencies[1])))
+
+    node_trace.marker.color = node_adjacencies
+    node_trace.text = node_text
+
     return node_trace
 
 
