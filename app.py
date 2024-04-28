@@ -42,6 +42,7 @@ if __name__ == '__main__':
 
     if sb.button('Generate Graph'):
         G = nx.random_geometric_graph(100, 0.2)
+        st.write(G)
 
         fig = plot_graph(G)
         st.pyplot(fig=fig, use_containter_width=True)
