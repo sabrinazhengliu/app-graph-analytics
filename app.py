@@ -33,7 +33,7 @@ def initialize_params():
 if __name__ == '__main__':
 
     initialize_page()
-    initialize_params()
+    # initialize_params()
 
     if st.button('Generate Graph'):
 
