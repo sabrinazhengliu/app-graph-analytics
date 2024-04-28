@@ -15,7 +15,7 @@ def max_edges(n_nodes):
 
 def initialize_params():
 
-    sb = st.sidebar()
+    sb = st.sidebar
 
     global graph_type
     options = ['Predefined Graph', 'Random Graph', 'Customized Graph']
