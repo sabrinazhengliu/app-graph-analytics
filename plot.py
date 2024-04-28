@@ -66,7 +66,7 @@ def plot_graph(G):
     fig = go.Figure(
         data=[edge_trace, node_trace],
         layout=go.Layout(
-            title='<br>Halloween Candy Network',
+            title='Halloween Candy Network',
             titlefont_size=16,
             showlegend=False,
             hovermode='closest',
