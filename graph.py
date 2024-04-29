@@ -32,7 +32,7 @@ class RandomGraph(MyGraph):
 
     @staticmethod
     def generate_random_nodes() -> list:
-        n_nodes = random.randint(10, 100)       
+        n_nodes = random.randint(10, 100)
         list_nodes = list(range(n_nodes))
         return list_nodes
 
@@ -52,6 +52,28 @@ class RandomGraph(MyGraph):
 class CustomizedGrpah(MyGraph):
     def __init__(self) -> None:
         pass
+
+
+def generate_graph(graph_type: str, n: int, r: float):
+
+    if graph_type == 'Predefined Graph':
+        G = nx.binomial_tree(8)
+        pos = nx.spring_layout(G, seed=10)
+        for i, _ in enumerate(G.nodes):
+            G.nodes[i]['pos'] = pos[i]
+
+    if graph_type == 'Random Graph':
+        n = random.randint(1, 100)   # return int between 1 and 100
+        p = random.random()          # return float between 0 and 1
+        G = nx.gnp_random_graph(n, p)
+        pos = nx.spring_layout(G)
+        for i, _ in enumerate(G.nodes):
+            G.nodes[i]['pos'] = pos[i]
+
+    if graph_type == 'Customized Graph':
+        G = nx.random_geometric_graph(n, r)
+
+    return G
 
 
 if __name__ == '__main__':

@@ -1,7 +1,9 @@
 import streamlit as st
-from plot import plot_graph
-import networkx as nx
-import random
+from graph import generate_graph
+from plot import display_graph_plots
+from plot import display_graph_stats
+from plot import display_distributions
+from plot import display_ref_url
 
 
 def initialize_page():
@@ -15,6 +17,8 @@ def initialize_params():
     sb = st.sidebar
 
     global graph_type, n, r
+    n = 0
+    r = 0
     options = ['Predefined Graph', 'Random Graph', 'Customized Graph']
     graph_type = sb.radio(label='Choose Graph Type:', options=options)
 
@@ -36,24 +40,10 @@ if __name__ == '__main__':
     initialize_params()
 
     if sb.button('Generate Graph'):
-        
-        if graph_type == 'Predefined Graph':
-            G = nx.binomial_tree(8)
-            pos = nx.spring_layout(G, seed=10)
-            for i, _ in enumerate(G.nodes):
-                G.nodes[i]['pos'] = pos[i]
-        
-        if graph_type == 'Random Graph': 
-            n = random.randint(1, 100)   # return int between 1 and 100
-            p = random.random()          # return float between 0 and 1
-            G = nx.gnp_random_graph(n, p)
-            pos = nx.spring_layout(G)
-            for i, _ in enumerate(G.nodes):
-                G.nodes[i]['pos'] = pos[i]
 
-        if graph_type == 'Customized Graph':
-            G = nx.random_geometric_graph(n, r)
-        
-        st.write(G)
-        fig = plot_graph(G)
-        st.plotly_chart(fig, use_containter_width=True)
+        G = generate_graph(graph_type, n, r)
+
+        display_graph_plots(G, graph_type)
+        display_graph_stats(G)
+        display_distributions(G)
+        display_ref_url()
