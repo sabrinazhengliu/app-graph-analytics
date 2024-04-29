@@ -168,5 +168,5 @@ def display_ref_url() -> None:
     st.subheader('More Explanations')
     url = "https://sabrinazhengliu.medium.com/"
     url += "node-centrality-algorithms-explained-491720a7a74e"
-    st.markdown(f"[{url}](%s)" % url)
+    st.markdown(f"[{url}]({url})")
     return
