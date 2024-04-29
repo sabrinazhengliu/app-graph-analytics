@@ -41,4 +41,4 @@ if __name__ == '__main__':
         G = nx.random_geometric_graph(100, 0.2)
         st.write(G)
         fig = plot_graph(G)
-        st.pyplot(fig=fig, use_containter_width=True)
+        st.plotly_chart(fig, use_containter_width=True)

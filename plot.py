@@ -80,7 +80,7 @@ def plot_graph(G):
             showlegend=False,
             hovermode='closest',
             margin=dict(b=20, l=5, r=5, t=40),
-            annotation=[dict(
+            annotations=[dict(
                 text="Network",
                 showarrow=False,
                 xref="paper",
