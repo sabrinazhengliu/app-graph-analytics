@@ -16,7 +16,7 @@ def generate_node_trace(G):
         hoverinfo='text',
         marker=dict(
             showscale=True,
-            colorscale='YlGnBu',
+            colorscale='YlOrRd_r',
             reversescale=True,
             color=[],
             size=10,
