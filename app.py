@@ -1,4 +1,5 @@
 import streamlit as st
+import networkx as nx
 from graph import make_graph
 from plot import display_graph_plots
 from plot import display_graph_stats
@@ -81,3 +82,17 @@ if __name__ == '__main__':
         display_graph_stats(G)
         display_distributions(G)
         display_ref_url()
+
+        df_adj = nx.to_pandas_adjacency(G).astype(int)
+
+        @st.cache_data
+        def convert_df(df):
+            return df.to_csv(index=True).encode('utf-8')
+
+        sb.download_button(
+            label='Download Adjacency Matrix',
+            data=convert_df(df_adj),
+            file_name=f"{G.__str__()}.csv",
+            mime='text/csv',
+            key='download-csv',
+        )

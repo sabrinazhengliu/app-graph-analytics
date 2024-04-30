@@ -28,7 +28,9 @@ class CustomizedGrpah(nx.Graph):
         return list_edges
 
 
-def make_graph(graph_type: str, n: int, p: float, r: float, e: int) -> nx.Graph:
+def make_graph(
+        graph_type: str, n: int, p: float, r: float, e: int
+) -> nx.Graph:
 
     def _apply_layout(G, seed=None):
         pos = nx.spring_layout(G, seed=seed)
